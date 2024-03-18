@@ -1,4 +1,5 @@
 import {
+    ActivityIndicator,
   StyleSheet,
   Text,
   TextInput,
@@ -6,25 +7,39 @@ import {
   View,
 } from "react-native";
 import React, { useState } from "react";
+import createUser from "../Services/auth";
 
 const SignUp = () => {
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
+  //   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [isCreating, setIsCreating] = useState(false);
 
-  const handleSignup = () => {
-    console.log("Username:", username);
-    console.log("Password:", password);
+  const handleSignup = async () => {
+    // console.log("Username:", username);
+    setIsCreating(true);
+    await createUser(email, password);
+    setIsCreating(false);
     console.log("Email:", email);
+    console.log("Password:", password);
   };
   return (
     <View>
+
+
       <Text style={styles.title}>Signup</Text>
-      <TextInput
+      {/* <TextInput
         style={styles.input}
         placeholder="Username"
         value={username}
         onChangeText={(text) => setUsername(text)}
+      /> */}
+      <TextInput
+        style={styles.input}
+        placeholder="Email"
+        keyboardType="email-address"
+        value={email}
+        onChangeText={(text) => setEmail(text)}
       />
       <TextInput
         style={styles.input}
@@ -33,16 +48,10 @@ const SignUp = () => {
         value={password}
         onChangeText={(text) => setPassword(text)}
       />
-      <TextInput
-        style={styles.input}
-        placeholder="Email"
-        keyboardType="email-address"
-        value={email}
-        onChangeText={(text) => setEmail(text)}
-      />
       <TouchableOpacity style={styles.button} onPress={handleSignup}>
         <Text style={styles.buttonText}>Signup</Text>
       </TouchableOpacity>
+      {isCreating && <ActivityIndicator size="large" color="#0000ff" />}
     </View>
   );
 };
