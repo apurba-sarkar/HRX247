@@ -1,5 +1,5 @@
 import {
-    Button,
+  Button,
   StyleSheet,
   Text,
   TextInput,
@@ -7,16 +7,13 @@ import {
   View,
 } from "react-native";
 import React, { useState } from "react";
-import {useNavigation} from "@react-navigation/native";
-
-
-
+import { useNavigation } from "@react-navigation/native";
 
 const Login = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
-  const navigation = useNavigation()
+  const navigation = useNavigation();
 
   const handleLogin = () => {
     console.log("Username:", username);
@@ -41,7 +38,7 @@ const Login = () => {
       <TouchableOpacity style={styles.button} onPress={handleLogin}>
         <Text style={styles.buttonText}>Login</Text>
       </TouchableOpacity>
-      <Button title="press " onPress={()=>navigation.replace("SignUp")}/>
+      <Button title="press " onPress={() => navigation.replace("SignUp")} />
     </View>
   );
 };
