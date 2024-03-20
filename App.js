@@ -22,11 +22,10 @@ export default function App() {
     <NavigationContainer>
       <Stack.Navigator
         initialRouteName="Welcome"
-        options={{ headerShown: false }}
       >
-        <Stack.Screen name="Welcome" component={Welcome} />
-        <Stack.Screen name="Login" component={Login} />
-        <Stack.Screen name="SignUp" component={SignUp} />
+        <Stack.Screen name="Welcome" component={Welcome}   options={{ headerShown: false }}/>
+        <Stack.Screen name="Login" component={Login}  options={{ headerShown: false }} />
+        <Stack.Screen name="SignUp" component={SignUp}  options={{ headerShown: false }} />
       </Stack.Navigator>
     </NavigationContainer>
   );

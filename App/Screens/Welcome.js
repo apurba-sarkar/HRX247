@@ -2,8 +2,9 @@ import { SafeAreaView, StyleSheet, Text, View, Image } from "react-native";
 import React from "react";
 import { Button } from "react-native-paper";
 import wel from "../icons/wel.jpg";
+import theme from "../theme";
 
-const Welcome = ({navigation}) => {
+const Welcome = ({ navigation }) => {
   return (
     <View style={styles.main}>
       <Image source={wel} style={styles.wel} />
@@ -12,7 +13,7 @@ const Welcome = ({navigation}) => {
       <View style={styles.wbutton}>
         <Button
           mode="contained-tonal"
-          buttonColor="#148004"
+          buttonColor={theme.colors.primary}
           textColor="#ffff"
           contentStyle={{ height: 50 }}
           onPress={() => navigation.replace("Login")}
@@ -52,7 +53,7 @@ const styles = StyleSheet.create({
   },
   text: {
     fontSize: 16,
-    fontWeight:"500",
-    color:"#273238"
+    fontWeight: "500",
+    color: theme.colors.font,
   },
 });

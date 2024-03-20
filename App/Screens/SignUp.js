@@ -1,5 +1,6 @@
 import {
     ActivityIndicator,
+  Button,
   StyleSheet,
   Text,
   TextInput,
@@ -8,8 +9,11 @@ import {
 } from "react-native";
 import React, { useState } from "react";
 import createUser from "../Services/auth";
+import { useNavigation } from '@react-navigation/native';
+
 
 const SignUp = () => {
+  const navigation = useNavigation();
   //   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -51,6 +55,7 @@ const SignUp = () => {
       <TouchableOpacity style={styles.button} onPress={handleSignup}>
         <Text style={styles.buttonText}>Signup</Text>
       </TouchableOpacity>
+      <Button title="login" onPress={()=>navigation.replace("Login")}/>
       {isCreating && <ActivityIndicator size="large" color="#0000ff" />}
     </View>
   );
