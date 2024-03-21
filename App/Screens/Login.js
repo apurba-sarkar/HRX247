@@ -20,53 +20,52 @@ const Login = () => {
       <Text style={styles.title}>Please login with your E-mail</Text>
       <Image source={login} style={styles.login} />
 
-        <TextInput
-          style={styles.input}
-          value={username}
-          onChangeText={(text) => setUsername(text)}
-          textColor={theme.colors.primary}
-          inputMode="email"
-          activeUnderlineColor={theme.colors.primary}
-          activeOutlineColor={theme.colors.primary}
-          label="Email"
-          backgroundColor="#fff"
-          //  selectionColor={theme.colors.primary}
-        />
-        <TextInput
-          style={styles.input}
-          label="Password"
-          secureTextEntry={true}
-          value={password}
-          onChangeText={(text) => setPassword(text)}
-          activeUnderlineColor={theme.colors.primary}
-          activeOutlineColor={theme.colors.primary}
-          backgroundColor="#fff"
-        />
+      <TextInput
+        style={styles.input}
+        value={username}
+        onChangeText={(text) => setUsername(text)}
+        textColor={theme.colors.primary}
+        inputMode="email"
+        activeUnderlineColor={theme.colors.primary}
+        activeOutlineColor={theme.colors.primary}
+        label="Email"
+        backgroundColor="#fff"
+        //  selectionColor={theme.colors.primary}
+      />
+      <TextInput
+        style={styles.input}
+        label="Password"
+        secureTextEntry={true}
+        value={password}
+        onChangeText={(text) => setPassword(text)}
+        activeUnderlineColor={theme.colors.primary}
+        activeOutlineColor={theme.colors.primary}
+        backgroundColor="#fff"
+      />
 
-        <Button
-          mode="contained-tonal"
-          buttonColor={theme.colors.primary}
-          textColor="#ffff"
-          contentStyle={{ height: 50 }}
-          onPress={() => navigation.replace("Login")}
-          style={styles.cusButton}
-        >
-          Login
-        </Button>
-        <Text style={{ fontSize: 12 }}>
-          New to HRX247, Don't worry your can Sign Up now
-        </Text>
-        <Button
-          mode="outlined"
-          // buttonColor={theme.colors.primary}
-          textColor={theme.colors.primary}
-          contentStyle={{ height: 50 }}
-          onPress={() => navigation.replace("SignUp")}
-          style={styles.cusButton}
-        >
-          Signup
-        </Button>
-   
+      <Button
+        mode="contained-tonal"
+        buttonColor={theme.colors.primary}
+        textColor="#ffff"
+        contentStyle={{ height: 50 }}
+        onPress={() => navigation.replace("Login")}
+        style={styles.cusButton}
+      >
+        Login
+      </Button>
+      <Text style={{ fontSize: 12 }}>
+        New to HRX247, Don't worry your can Sign Up now
+      </Text>
+      <Button
+        mode="outlined"
+        // buttonColor={theme.colors.primary}
+        textColor={theme.colors.primary}
+        contentStyle={{ height: 50 }}
+        onPress={() => navigation.replace("SignUp")}
+        style={styles.cusButton}
+      >
+        Signup
+      </Button>
     </View>
   );
 };
@@ -91,7 +90,7 @@ const styles = StyleSheet.create({
     margin: 10,
     borderColor: theme.colors.primary,
     borderWidth: 2,
-    marginTop:15
+    marginTop: 15,
   },
   top: {
     paddingTop: 40,
@@ -102,7 +101,7 @@ const styles = StyleSheet.create({
   login: {
     height: 450,
     aspectRatio: 1,
-    // marginTop:-30
+    marginBottom:-40
   },
   title: {
     paddingTop: 20,
