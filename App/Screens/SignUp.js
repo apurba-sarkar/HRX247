@@ -26,14 +26,18 @@ const inputStyles = {
 };
 
 const SignUp = () => {
-  const { control, handleSubmit, reset } = useForm();
+  const {
+    control,
+    handleSubmit,
+    reset,
+    formState: { errors },
+  } = useForm();
   const initialData = {
     fullname: "",
     birthyear: 0,
     age: 2024 - this.birthyear,
     bloodgroup: "",
     mobile: 0,
-    email: "",
     password: "",
   };
 
@@ -53,56 +57,86 @@ const SignUp = () => {
       <Controller
         control={control}
         name="fullname"
-        style={styles.input}
+        rules={{ required: "this field is required" }}
         render={({ field: { value, onChange } }) => (
           <TextInput
             label="full name"
             value={value}
             onChangeText={(value) => onChange(value)}
             {...inputStyles}
+            style={styles.input}
+          />
+        )}
+      />
+      {errors?.fullname?.message && <Text>This is required.</Text>}
+      <Controller
+        control={control}
+        name="birthyear"
+        render={({ field: { value, onChange } }) => (
+          <TextInput
+            label="birthyear"
+            value={value}
+            onChangeText={(value) => onChange(value)}
+            {...inputStyles}
+            style={styles.input}
           />
         )}
       />
       <Controller
         control={control}
-        name="fullname"
-        style={styles.input}
+        name="age"
         render={({ field: { value, onChange } }) => (
           <TextInput
-            label="full name"
+            label="age"
             value={value}
             onChangeText={(value) => onChange(value)}
             {...inputStyles}
+            style={styles.input}
           />
         )}
       />
       <Controller
         control={control}
-        name="fullname"
-        style={styles.input}
+        name="bloodgroup"
         render={({ field: { value, onChange } }) => (
           <TextInput
-            label="full name"
+            label="bloodgroup"
             value={value}
             onChangeText={(value) => onChange(value)}
             {...inputStyles}
+            style={styles.input}
           />
         )}
       />
+
       <Controller
         control={control}
-        name="fullname"
-        style={styles.input}
+        name="mobile"
         render={({ field: { value, onChange } }) => (
           <TextInput
-            label="full name"
+            label="mobile"
             value={value}
             onChangeText={(value) => onChange(value)}
             {...inputStyles}
+            style={styles.input}
           />
         )}
       />
-    
+
+      <Controller
+        control={control}
+        name="password"
+        render={({ field: { value, onChange } }) => (
+          <TextInput
+            label="password"
+            value={value}
+            onChangeText={(value) => onChange(value)}
+            {...inputStyles}
+            style={styles.input}
+          />
+        )}
+      />
+
       <Button
         mode="contained"
         textColor="#fff"
@@ -168,6 +202,7 @@ const styles = StyleSheet.create({
   },
   input: {
     width: 300,
+    // backgroundColor:"red"
   },
   signup: {
     backgroundColor: "#fff",
