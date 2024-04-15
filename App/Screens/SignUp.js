@@ -34,17 +34,17 @@ const SignUp = () => {
   } = useForm();
   const initialData = {
     fullname: "",
-    birthyear: 0,
-    age: 2024 - this.birthyear,
+    age: 0,
     bloodgroup: "",
     mobile: 0,
     password: "",
   };
 
-  const handleSignup = async () => {};
-
   const onSubmit = (data) => {
     // console.log(cusData);
+    createUser(data)
+    try {
+    } catch (error) {}
     console.log(data);
     // alert(JSON.stringify(data))
     reset(initialData);
@@ -68,20 +68,9 @@ const SignUp = () => {
           />
         )}
       />
-      {errors?.fullname?.message && <Text>This is required.</Text>}
-      <Controller
-        control={control}
-        name="birthyear"
-        render={({ field: { value, onChange } }) => (
-          <TextInput
-            label="birthyear"
-            value={value}
-            onChangeText={(value) => onChange(value)}
-            {...inputStyles}
-            style={styles.input}
-          />
-        )}
-      />
+      {errors?.fullname?.message && (
+        <Text style={styles.error}>This is required.</Text>
+      )}
       <Controller
         control={control}
         name="age"
@@ -95,6 +84,10 @@ const SignUp = () => {
           />
         )}
       />
+      {errors?.fullname?.message && (
+        <Text style={styles.error}>This is required.</Text>
+      )}
+
       <Controller
         control={control}
         name="bloodgroup"
@@ -108,7 +101,9 @@ const SignUp = () => {
           />
         )}
       />
-
+      {errors?.fullname?.message && (
+        <Text style={styles.error}>This is required.</Text>
+      )}
       <Controller
         control={control}
         name="mobile"
@@ -122,7 +117,25 @@ const SignUp = () => {
           />
         )}
       />
-
+      {errors?.fullname?.message && (
+        <Text style={styles.error}>This is required.</Text>
+      )}
+      <Controller
+        control={control}
+        name="email"
+        render={({ field: { value, onChange } }) => (
+          <TextInput
+            label="email"
+            value={value}
+            onChangeText={(value) => onChange(value)}
+            {...inputStyles}
+            style={styles.input}
+          />
+        )}
+      />
+      {errors?.email?.message && (
+        <Text style={styles.error}>This is required.</Text>
+      )}
       <Controller
         control={control}
         name="password"
@@ -136,7 +149,9 @@ const SignUp = () => {
           />
         )}
       />
-
+      {errors?.fullname?.message && (
+        <Text style={styles.error}>This is required.</Text>
+      )}
       <Button
         mode="contained"
         textColor="#fff"
@@ -210,5 +225,8 @@ const styles = StyleSheet.create({
     paddingTop: 20,
     alignItems: "center",
     justifyContent: "center",
+  },
+  error: {
+    color: "red",
   },
 });
