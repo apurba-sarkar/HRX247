@@ -6,7 +6,7 @@ import {
   View,
 } from "react-native";
 import React, { useState } from "react";
-import createUser from "../Services/auth";
+import createUser, { addNewUser } from "../Services/auth";
 import { useNavigation } from "@react-navigation/native";
 import { Controller, useController, useForm } from "react-hook-form";
 import { TextInput, TextInputMask, Button } from "react-native-paper";
@@ -35,14 +35,15 @@ const SignUp = () => {
   const initialData = {
     fullname: "",
     age: 0,
+    email:"",
     bloodgroup: "",
     mobile: 0,
     password: "",
   };
 
-  const onSubmit = (data) => {
+  const onSubmit = async(data) => {
     // console.log(cusData);
-    createUser(data)
+    await createUser(data);
     try {
     } catch (error) {}
     console.log(data);
@@ -81,10 +82,11 @@ const SignUp = () => {
             onChangeText={(value) => onChange(value)}
             {...inputStyles}
             style={styles.input}
+            keyboardType="numeric"
           />
         )}
       />
-      {errors?.fullname?.message && (
+      {errors?.age?.message && (
         <Text style={styles.error}>This is required.</Text>
       )}
 
@@ -101,7 +103,7 @@ const SignUp = () => {
           />
         )}
       />
-      {errors?.fullname?.message && (
+      {errors?.bloodgroup?.message && (
         <Text style={styles.error}>This is required.</Text>
       )}
       <Controller
@@ -114,10 +116,11 @@ const SignUp = () => {
             onChangeText={(value) => onChange(value)}
             {...inputStyles}
             style={styles.input}
+            keyboardType="numeric"
           />
         )}
       />
-      {errors?.fullname?.message && (
+      {errors?.mobile?.message && (
         <Text style={styles.error}>This is required.</Text>
       )}
       <Controller
@@ -130,6 +133,7 @@ const SignUp = () => {
             onChangeText={(value) => onChange(value)}
             {...inputStyles}
             style={styles.input}
+        
           />
         )}
       />
@@ -149,7 +153,7 @@ const SignUp = () => {
           />
         )}
       />
-      {errors?.fullname?.message && (
+      {errors?.password?.message && (
         <Text style={styles.error}>This is required.</Text>
       )}
       <Button
