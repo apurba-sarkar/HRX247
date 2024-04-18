@@ -32,14 +32,14 @@ const SignUp = () => {
     reset,
     formState: { errors },
   } = useForm();
-  const initialData = {
-    fullname: "",
-    age: 0,
-    email:"",
-    bloodgroup: "",
-    mobile: 0,
-    password: "",
-  };
+  // const initialData = {
+  //   fullname: "",
+  //   age: 0,
+  //   email:"",
+  //   bloodgroup: "",
+  //   mobile: 0,
+  //   password: "",
+  // };
 
   const onSubmit = async(data) => {
     // console.log(cusData);
@@ -48,7 +48,7 @@ const SignUp = () => {
     } catch (error) {}
     console.log(data);
     // alert(JSON.stringify(data))
-    reset(initialData);
+    // reset([]);
     // e.target.reset();
   };
 
@@ -62,7 +62,6 @@ const SignUp = () => {
         render={({ field: { value, onChange } }) => (
           <TextInput
             label="full name"
-            value={value}
             onChangeText={(value) => onChange(value)}
             {...inputStyles}
             style={styles.input}
@@ -78,7 +77,7 @@ const SignUp = () => {
         render={({ field: { value, onChange } }) => (
           <TextInput
             label="age"
-            value={value}
+       
             onChangeText={(value) => onChange(value)}
             {...inputStyles}
             style={styles.input}
@@ -96,7 +95,7 @@ const SignUp = () => {
         render={({ field: { value, onChange } }) => (
           <TextInput
             label="bloodgroup"
-            value={value}
+   
             onChangeText={(value) => onChange(value)}
             {...inputStyles}
             style={styles.input}
@@ -112,7 +111,7 @@ const SignUp = () => {
         render={({ field: { value, onChange } }) => (
           <TextInput
             label="mobile"
-            value={value}
+        
             onChangeText={(value) => onChange(value)}
             {...inputStyles}
             style={styles.input}
@@ -129,7 +128,7 @@ const SignUp = () => {
         render={({ field: { value, onChange } }) => (
           <TextInput
             label="email"
-            value={value}
+     
             onChangeText={(value) => onChange(value)}
             {...inputStyles}
             style={styles.input}
@@ -146,7 +145,7 @@ const SignUp = () => {
         render={({ field: { value, onChange } }) => (
           <TextInput
             label="password"
-            value={value}
+     
             onChangeText={(value) => onChange(value)}
             {...inputStyles}
             style={styles.input}

@@ -66,6 +66,16 @@ const Login = () => {
       >
         Signup
       </Button>
+      <Button
+        mode="outlined"
+        // buttonColor={theme.colors.primary}
+        textColor={theme.colors.primary}
+        contentStyle={{ height: 50 }}
+        onPress={() => navigation.replace("Main")}
+        style={styles.cusButton}
+      >
+       Main
+      </Button>
     </View>
   );
 };
