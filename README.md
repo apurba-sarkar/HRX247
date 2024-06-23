@@ -1,7 +1,7 @@
 # Title: Enhanced Hospital Management System with Real-time Database Integration (App name: HRX247)
 
 Introduction:
-Our project aims to develop a feature-rich notepad application with enhanced functionality, leveraging modern React Nativetechnologies such as React Toolkit and Supabase. This management system provides a seamless user experience with basic note-taking capabilities while incorporating advanced features like live reflection of doctors sugegstion, medicine list/store, doctors and their timming sliders, and. We have prioritized user convenience by integrating delete and stale features, ensuring efficient management stuffs and individuals by hospital authorities. By utilizing a combination of Vanilla CSS,  React-Toast, and React Query and other technologies, we've tailored a robust solution that meets the demands of modern note-taking applications.
+Our project aims to develop a feature-rich notepad application with enhanced functionality, leveraging modern React Nativetechnologies such as React Toolkit and Supabase. This management system provides a seamless user experience with basic note-taking capabilities while incorporating advanced features like live reflection of doctors sugegstion, medicine list/store, doctors and their timming sliders, and. We have prioritized user convenience by integrating delete and stale features, ensuring efficient management stuffs and individuals by hospital authorities. By utilizing a combination of Vanilla CSS,  React-Toast, and React Query and other technologies, we've tailored a robust solution that meets the demands of modern note-taking applications.temp
 
 ## Key Features:
 
